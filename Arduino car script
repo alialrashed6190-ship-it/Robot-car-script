@@ -1,0 +1,50 @@
+// section A:
+int ENA_A = 5;
+int IN1_A = 7;
+int IN2_A = 8;
+
+// Section B:
+int ENA_B = 3;
+int IN1_B = 6;
+int IN2_B = 11;
+
+// others
+int LED = 4;
+
+void setup() {
+  // A
+  pinMode(ENA_A, OUTPUT);
+  pinMode(IN1_A, OUTPUT);
+  pinMode(IN2_A, OUTPUT);
+  
+  // B
+  pinMode(ENA_B, OUTPUT);
+  pinMode(IN1_B, OUTPUT);
+  pinMode(IN2_B, OUTPUT);
+
+
+  // warning before moving
+  pinMode(LED, OUTPUT);
+  digitalWrite(ENA_A, LOW);
+  digitalWrite(ENA_B, LOW);
+
+  digitalWrite(LED, HIGH);
+  delay(3000);
+  digitalWrite(LED, LOW);
+
+  // A Forward
+  digitalWrite(IN1_A, HIGH);
+  digitalWrite(IN2_A, LOW);
+
+  // B Forward
+  digitalWrite(IN1_B, HIGH);
+  digitalWrite(IN2_B, LOW);
+
+  //set speed
+  analogWrite(ENA_A, 100);
+  analogWrite(ENA_B, 100);
+}
+
+void loop() {
+   
+}
